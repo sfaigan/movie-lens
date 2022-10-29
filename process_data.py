@@ -35,6 +35,7 @@ def get_genres():
         ("Thriller",),
         ("War",),
         ("Western",),
+        ("(no genres listed)",),
     ]
 
 def get_genome_tags():
@@ -95,8 +96,6 @@ def get_movies_and_is_categorized_as():
             movies.append((id, name))
 
             for genre in genres:
-                if genre == "(no genres listed)":
-                    continue
                 is_categorized_as.append((id, genre))
         
         with open("./data/processed/movies.pickle", "wb") as fp:
