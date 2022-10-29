@@ -63,28 +63,28 @@ def init_db(recreate=False):
             create_tables(cur)
 
             print("Populating users table...")
-            insert("users", users[0], users[1:], cur)
+            insert("users", users[1:], cur)
 
             print("Populating movies table...")
-            insert("movies", movies[0], movies[1:], cur)
+            insert("movies", movies[1:], cur)
 
             print("Populating tags table...")
-            insert("tags", tags[0], tags[1:], cur)
+            insert("tags", tags[1:], cur)
 
             print("Populating genres table...")
-            insert("genres", genres[0], genres[1:], cur)
+            insert("genres", genres[1:], cur)
 
             print("Populating applies table...")
-            insert("applies", applies[0], applies[1:], cur)
+            insert("applies", applies[1:], cur)
 
             print("Populating rates table...")
-            insert("rates", rates[0], rates[1:], cur)
+            insert("rates", rates[1:], cur)
 
             print("Populating relates_to table...")
-            insert("relates_to", relates_to[0], relates_to[1:], cur)
+            insert("relates_to", relates_to[1:], cur)
 
             print("Populating is_categorized_as table...")
-            insert("is_categorized_as", is_categorized_as[0], is_categorized_as[1:], cur)
+            insert("is_categorized_as", is_categorized_as[1:], cur)
 
     finally:
         if conn:

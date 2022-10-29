@@ -66,7 +66,7 @@ def get_relates_to():
             relates_to = pickle.load(fp)
     else:
         relates_to = [("movieId", "tagId", "relevance")]
-        for row in read_csv("./data/truncated/genome-scores.csv"):
+        for row in read_csv("./data/genome-scores.csv"):
             movieId = int(row[0])
             tagId = int(row[1])
             relevance = float(row[2])
@@ -116,7 +116,7 @@ def get_rates_and_users():
         rates = [("userId", "movieId", "rating")]
         users = set()
 
-        for row in read_csv("./data/truncated/ratings.csv"):
+        for row in read_csv("./data/ratings.csv"):
             userId = int(row[0])
             movieId = int(row[1])
             rating = float(row[2])
@@ -143,7 +143,7 @@ def get_applies_and_users_and_genome_tags():
         applies = [("userId", "movieId", "tagId")]
         users = set(())
 
-        for row in read_csv("./data/truncated/tags.csv"):
+        for row in read_csv("./data/tags.csv"):
             userId = int(row[0])
             movieId = int(row[1])
             tagId = int(genome_tags_dict.get(row[2], -1))
