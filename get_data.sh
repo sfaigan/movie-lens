@@ -8,4 +8,3 @@ rm ml-latest.zip README.txt links.csv
 rm -rf ml-latest
 head -n 1000 ratings.csv > truncated/ratings.csv
 head -n 1000 tags.csv > truncated/tags.csv
-head -n 1000 genome-scores.csv > truncated/genome-scores.csv
