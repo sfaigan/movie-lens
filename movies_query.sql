@@ -1,3 +1,5 @@
+SET client_encoding TO 'UTF8';
+
 WITH avg_ratings AS (
  		SELECT movies.name as movie, avg(rates.rating) as avg_rating FROM movies
  			LEFT JOIN rates ON movies.id=rates.movieId

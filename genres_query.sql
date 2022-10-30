@@ -1,3 +1,5 @@
+SET client_encoding TO 'UTF8';
+
 WITH movieids_genres AS (
 		SELECT movies.id, is_categorized_as.genreName as genre FROM movies
 			LEFT JOIN is_categorized_as ON movies.id=is_categorized_as.movieId
@@ -12,4 +14,5 @@ WITH movieids_genres AS (
 			GROUP BY genre
  	)
 
-SELECT avg_ratings.genre as genre, avg_rating, avg_tag_relevance FROM avg_ratings INNER JOIN avg_tag_relevances ON avg_ratings.genre=avg_tag_relevances.genre
+SELECT avg_ratings.genre as genre, avg_rating, avg_tag_relevance FROM avg_ratings
+	INNER JOIN avg_tag_relevances ON avg_ratings.genre=avg_tag_relevances.genre
